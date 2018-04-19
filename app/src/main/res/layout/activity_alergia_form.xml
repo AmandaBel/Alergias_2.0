@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.amandabeltoso.alergias.AlergiaFormActivity">
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="25sp"
+        android:padding="40dp"
+        android:textColor="@color/colorBlack"
+        android:text="Cadastro de Alergias"/>
+
+    <EditText
+        android:id="@+id/edit_alergia"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nome da alergia" />
+
+    <EditText
+        android:id="@+id/edit_descricao"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="top"
+        android:hint="Descrição" />
+
+
+
+    <Button
+        android:id="@+id/button_salvar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="40dp"
+        android:background="@drawable/button"
+        android:textColor="@color/colorLigh"
+
+        android:text="Salvar"/>
+</LinearLayout>
