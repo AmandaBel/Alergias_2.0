@@ -25,7 +25,7 @@ public class AlergiaActivity extends AppCompatActivity {
         Bundle bundle = intent.getExtras();
 
         nomeAlergia = bundle.getString("nomeAlergia");
-        descricaoAlergia = bundle.getString("descricaoAlergia");
+        descricaoAlergia = bundle.getString("nomeAlergia");
 
 
 
@@ -41,7 +41,7 @@ public class AlergiaActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
 
                 Intent detalheItent = new Intent(AlergiaActivity.this, DetalheAlergiaActivity.class);
-                detalheItent.putExtra("descricao",AlergiasList.get(i));
+                detalheItent.putExtra("nomeAlergia",AlergiasList.get(i));
                 startActivity(detalheItent);
             }
         });

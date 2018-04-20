@@ -25,14 +25,13 @@ public class AlergiaFormActivity extends AppCompatActivity implements View.OnCli
     @Override
     public void onClick(View view) {
 
-        String alergia = String.valueOf(this.vm.editAlergia.getText().toString());
-        String descricao = String.valueOf(this.vm.editDescricao.getText().toString());
+        Intent intent = new Intent(AlergiaFormActivity.this, AlergiaActivity.class);
+        String alergia =  String.valueOf(this.vm.editAlergia.getText().toString());
+        //String descricao = String.valueOf(this.vm.editDescricao.getText().toString());
 
         Bundle bundle = new Bundle();
         bundle.putString("nomeAlergia", alergia);
-        bundle.putString("descricaoAlergia", descricao);
 
-        Intent intent = new Intent(AlergiaFormActivity.this, AlergiaActivity.class);
         intent.putExtras(bundle);
         startActivity(intent);
 

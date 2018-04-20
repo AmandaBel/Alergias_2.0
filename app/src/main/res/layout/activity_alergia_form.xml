@@ -37,8 +37,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="40dp"
+        android:onClick="onClick"
         android:background="@drawable/button"
         android:textColor="@color/colorLigh"
-
         android:text="Salvar"/>
 </LinearLayout>
