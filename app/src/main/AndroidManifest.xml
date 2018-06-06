@@ -6,20 +6,29 @@
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/ic_launcher_foreground_novologo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity" />
+        <activity android:name=".AlergiaFormActivity" />
+        <activity android:name=".CadastroActivity" />
+        <activity android:name=".AlergiaActivity" />
+        <activity android:name=".DetalheAlergiaActivity" />
+        <activity
+            android:name=".UsuarioActivity"
+            android:label="@string/title_activity_usuario"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".SplashScreenActivity"
+            android:theme="@style/AppCompat.TelaCheia">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".AlergiaFormActivity" />
-        <activity android:name=".CadastroActivity" />
-        <activity android:name=".AlergiaActivity" />
-        <activity android:name=".DetalheAlergiaActivity"></activity>
+        <activity android:name=".ListaUsuariosActivity" />
+        <activity android:name=".ListaAlergiaActivity"></activity>
     </application>
 
 </manifest>

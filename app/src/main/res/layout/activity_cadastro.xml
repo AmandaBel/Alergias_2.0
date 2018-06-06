@@ -24,21 +24,21 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="text"
-        android:hint="Nome Completo"/>
+        android:hint="Nome Completo*"/>
 
     <EditText
         android:id="@+id/edit_idade"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="number"
-        android:hint="Idade"/>
+        android:hint="Idade*"/>
 
     <EditText
         android:id="@+id/edt_telefone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="number"
-        android:hint="Telefone"/>
+        android:hint="Telefone*"/>
 
 
 
@@ -51,24 +51,25 @@
         android:hint="Número do Cartão do SUS"/>
 
     <EditText
-        android:id="@+id/edit_login"
+        android:id="@+id/edit_emai"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="text"
-        android:hint="Login"/>
+        android:inputType="textEmailAddress"
+        android:hint="Email*"/>
 
     <EditText
         android:id="@+id/edit_senhaForm"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="textPassword"
-        android:hint="Senha"/>
+        android:hint="Senha*"/>
 
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
+        android:onClick="inserirUsuario"
         android:background="@drawable/button"
         android:textColor="@color/colorLigh"
         android:text="Salvar"/>
