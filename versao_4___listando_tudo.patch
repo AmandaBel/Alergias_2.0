@@ -1,0 +1,167 @@
+Index: app/src/main/java/com/amandabeltoso/alergias/Model/Alergia.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/amandabeltoso/alergias/Model/Alergia.java	(date 1528311791000)
++++ app/src/main/java/com/amandabeltoso/alergias/Model/Alergia.java	(date 1528311791000)
+@@ -0,0 +1,53 @@
++package com.amandabeltoso.alergias.Model;
++
++import java.util.ArrayList;
++import java.util.List;
++
++/**
++ * Created by Amanda Beltoso on 19/04/2018.
++ */
++
++public class Alergia {
++
++    private Integer id;
++    private String alergia;
++    private String descricao;
++    private Usuario usuario;
++
++    public Alergia(){
++
++
++    }
++
++    public Integer getId() {
++        return id;
++    }
++
++    public void setId(Integer id) {
++        this.id = id;
++    }
++
++    public String getAlergia() {
++        return alergia;
++    }
++
++    public void setAlergia(String alergia) {
++        this.alergia = alergia;
++    }
++
++    public String getDescricao() {
++        return descricao;
++    }
++
++    public void setDescricao(String descricao) {
++        this.descricao = descricao;
++    }
++
++    public Usuario getUsuario() {
++        return usuario;
++    }
++
++    public void setUsuario(Usuario usuario) {
++        this.usuario = usuario;
++    }
++}
+Index: app/src/main/java/com/amandabeltoso/alergias/Model/Usuario.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/amandabeltoso/alergias/Model/Usuario.java	(date 1528311791000)
++++ app/src/main/java/com/amandabeltoso/alergias/Model/Usuario.java	(date 1528311791000)
+@@ -0,0 +1,98 @@
++package com.amandabeltoso.alergias.Model;
++
++import java.util.List;
++
++/**
++ * Created by Amanda Beltoso on 24/05/2018.
++ */
++
++public class Usuario {
++
++    private Integer id;
++    private String nome;
++    private Integer idade;
++    private String telefone;
++    private Integer cartaoSus;
++    private String email;
++    private String senha;
++    private List<Alergia> alergias;
++
++    public Usuario() {
++
++    }
++
++    public Usuario(Integer id, String nome, Integer idade, String telefone, Integer cartaoSus, String email, String senha, List<Alergia> alergias) {
++        this.id = id;
++        this.nome = nome;
++        this.idade = idade;
++        this.telefone = telefone;
++        this.cartaoSus = cartaoSus;
++        this.email = email;
++        this.senha = senha;
++        this.alergias = alergias;
++    }
++
++    public Integer getId() {
++        return id;
++    }
++
++    public void setId(Integer id) {
++        this.id = id;
++    }
++
++    public String getNome() {
++        return nome;
++    }
++
++    public void setNome(String nome) {
++        this.nome = nome;
++    }
++
++    public Integer getIdade() {
++        return idade;
++    }
++
++    public void setIdade(Integer idade) {
++        this.idade = idade;
++    }
++
++    public String getTelefone() {
++        return telefone;
++    }
++
++    public void setTelefone(String telefone) {
++        this.telefone = telefone;
++    }
++
++    public Integer getCartaoSus() {
++        return cartaoSus;
++    }
++
++    public void setCartaoSus(Integer cartaoSus) {
++        this.cartaoSus = cartaoSus;
++    }
++
++    public String getEmail() {
++        return email;
++    }
++
++    public void setEmail(String email) {
++        this.email = email;
++    }
++
++    public String getSenha() {
++        return senha;
++    }
++
++    public void setSenha(String senha) {
++        this.senha = senha;
++    }
++
++    public List<Alergia> getAlergias() {
++        return alergias;
++    }
++
++    public void setAlergias(List<Alergia> alergias) {
++        this.alergias = alergias;
++    }
++}
