@@ -28,7 +28,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".ListaUsuariosActivity" />
-        <activity android:name=".ListaAlergiaActivity"></activity>
+        <activity android:name=".ListaAlergiaActivity" />
+        <activity android:name=".DetalheUsuarioActivity"></activity>
     </application>
 
 </manifest>

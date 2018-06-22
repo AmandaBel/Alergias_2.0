@@ -32,6 +32,16 @@ public class Usuario {
         this.alergias = alergias;
     }
 
+    public Usuario(Integer id, String nome, Integer idade, String telefone, Integer cartaoSus, String email, String senha) {
+        this.id = id;
+        this.nome = nome;
+        this.idade = idade;
+        this.telefone = telefone;
+        this.cartaoSus = cartaoSus;
+        this.email = email;
+        this.senha = senha;
+    }
+
     public Integer getId() {
         return id;
     }

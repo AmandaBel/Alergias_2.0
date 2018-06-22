@@ -18,7 +18,7 @@ public class AlergiaFormActivity extends AppCompatActivity  {
 
     private  ViewHolder vm = new ViewHolder();
     private Alergia alergia1;
-    private Usuario usuario1;
+    public static Usuario usuario1;
     Cursor cursor;
 
     @Override
@@ -29,6 +29,7 @@ public class AlergiaFormActivity extends AppCompatActivity  {
         this.vm.editAlergia = findViewById(R.id.edit_alergia);
         this.vm.editDescricao = findViewById(R.id.edit_descricao);
         this.vm.buttonSalvar = findViewById(R.id.button_salvar);
+        this.vm.btnVoltar = findViewById(R.id.btn_voltar_alergiaForm);
 
     }
 
@@ -38,13 +39,12 @@ public class AlergiaFormActivity extends AppCompatActivity  {
     public void inserirAlergia(View view){
         Intent intent = getIntent();
         Bundle bundle = intent.getExtras();
-        String usuario = bundle.getString("usuario");
         BDalergia bd = new BDalergia(AlergiaFormActivity.this);
         BDusuario bduser = new BDusuario(AlergiaFormActivity.this);
 //        usuario1 = bduser.carregaDadoById(Integer.valueOf(usuario));
         String alergia = this.vm.editAlergia.getText().toString();
         String descricao = this.vm.editDescricao.getText().toString();
-        usuario1 = bduser.selecionarUsuarioEmail(usuario);
+        usuario1 = bduser.selecionarUsuarioEmail(MainActivity.usuario1.getEmail());
 
         if(alergia.isEmpty() || descricao.isEmpty()){
 
@@ -65,16 +65,17 @@ public class AlergiaFormActivity extends AppCompatActivity  {
 
 //            bundle.putString("usuario", String.valueOf(usuario));
             Intent intent1 = new Intent(AlergiaFormActivity.this, ListaAlergiaActivity.class);
-            intent.putExtras(bundle);
+
 
             startActivity(intent1);
 
         }
 
-
-
-
         }
+
+    public void voltar(View view){
+        finish();
+    }
 
 
 
@@ -85,5 +86,6 @@ public class AlergiaFormActivity extends AppCompatActivity  {
         EditText editAlergia;
         EditText editDescricao;
         Button buttonSalvar;
+        Button btnVoltar;
     }
 }

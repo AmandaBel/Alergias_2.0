@@ -49,10 +49,13 @@ public class CadastroActivity extends AppCompatActivity {
             usuario.setSenha(this.vm.editSenha.getText().toString());
             bd.inserir(usuario);
             Toast.makeText(CadastroActivity.this,"Usuário cadastrado com sucesso", Toast.LENGTH_LONG).show();
-
+            Intent intent = new Intent(this, MainActivity.class);
+            startActivity(intent);
         }
 
     }
+
+
 
 
 

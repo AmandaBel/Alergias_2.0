@@ -15,4 +15,18 @@
         android:foregroundGravity="center"
         android:src="@mipmap/ic_launcher_foreground_novologo" />
 
+    <!--<TextView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="Alergias"-->
+        <!--android:gravity="center"-->
+        <!--android:foregroundGravity="center"-->
+        <!--android:textSize="16sp"-->
+        <!--android:textStyle="bold"-->
+        <!--android:textColor="@color/colorLigh"-->
+        <!--android:layout_marginLeft="25dp"-->
+        <!--android:layout_marginTop="120dp"-->
+        <!--android:fontFamily="sans-serif"-->
+        <!--/>-->
+
 </RelativeLayout>

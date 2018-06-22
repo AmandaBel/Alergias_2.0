@@ -47,7 +47,7 @@ public class BDusuario {
 
         String[] colunas = new String[]{"id", "nome", "idade", "telefone", "sus", "email", "senha"};
         database = bdaux.getWritableDatabase();
-        Cursor cursor = database.rawQuery("select * from Usuarios",null);
+        Cursor cursor = database.rawQuery("select * from Usuarios", null);
 //        Cursor cursor = database.query("Usuarios", colunas, null, null, null, null, "nome ASC");
 
         if (cursor.getCount() > 0) {
@@ -91,14 +91,14 @@ public class BDusuario {
         return usuario1;
     }
 
-    public Usuario carregaDadoById(int id){
+    public Usuario carregaDadoById(int id) {
         database = bdaux.getReadableDatabase();
         Cursor cursor;
         String[] colunasUsadas = new String[]{"_id", "nome", "idade", "telefone", "sus", "email", "senha"};
-        String where =   "_id=" + id;
-        cursor = database.query(NOME_TABELA,colunasUsadas,where, null, null, null, null, null);
+        String where = "_id=" + id;
+        cursor = database.query(NOME_TABELA, colunasUsadas, where, null, null, null, null, null);
 
-        if(cursor!=null){
+        if (cursor != null) {
             cursor.moveToFirst();
         }
 
@@ -136,8 +136,52 @@ public class BDusuario {
         return usuario1;
     }
 
+//    public Usuario montaUsuario(Cursor cursor) {
+//        if (cursor.getCount() == 0) {
+//            return null;
+//        }
+//        Integer id = cursor.getInt(cursor.getColumnIndex("_id"));
+//        String nome = cursor.getString(cursor.getColumnIndex("nome"));
+//        Integer idade = cursor.getInt(cursor.getColumnIndex("idade"));
+//        String telefone = cursor.getString(cursor.getColumnIndex("telefone"));
+//        Integer sus = cursor.getInt(cursor.getColumnIndex("sus"));
+//        String email = cursor.getString(cursor.getColumnIndex("email"));
+//        String senha = cursor.getString(cursor.getColumnIndex("senha"));
+//        return new Usuario(id,nome,idade,telefone,sus,email,senha);
+//    }
+//
+//    public Usuario findByLogin(String email, String senha) {
+//        String sql = "SELECT * FROM  USUARIOS WHERE email = ? AND senha = ?";
+//        String[] selectionArgs = new String[]{email, senha};
+//        Cursor cursor = database.rawQuery(sql, selectionArgs);
+//        cursor.moveToFirst();
+//        return montaUsuario(cursor);
+//    }
 
 
+    public Usuario getUser(String email, String senha) {
+        database = bdaux.getReadableDatabase();
+        String[] colunasUsadas = new String[]{"_id", "nome", "idade", "telefone", "sus", "email", "senha"};
+//        Cursor cursor = database.rawQuery("select * from Usuarios where email = '" + email + " 'and senha = '" + senha + "'", null);
+        Cursor cursor = database.query(NOME_TABELA, colunasUsadas, "email = ? and senha = ?", new String[]{email, senha}, null, null, null, null);
 
+        Usuario usuario1 = null;
+
+        if (cursor.moveToFirst()) {
+            usuario1 = new Usuario();
+            usuario1.setId(cursor.getInt(cursor.getColumnIndex("_id")));
+            usuario1.setNome(cursor.getString(cursor.getColumnIndex("nome")));
+            usuario1.setIdade(cursor.getInt(cursor.getColumnIndex("idade")));
+            usuario1.setTelefone(cursor.getString(cursor.getColumnIndex("telefone")));
+            usuario1.setCartaoSus(cursor.getInt(cursor.getColumnIndex("sus")));
+            usuario1.setEmail(cursor.getString(cursor.getColumnIndex("email")));
+            usuario1.setSenha(cursor.getString(cursor.getColumnIndex("senha")));
+        }
+
+
+        return usuario1;
+
+
+    }
 
 }

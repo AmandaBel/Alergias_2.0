@@ -1,5 +1,6 @@
 package com.amandabeltoso.alergias;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -12,9 +13,17 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
+
+import com.amandabeltoso.alergias.DAO.BDusuario;
+import com.amandabeltoso.alergias.Model.Usuario;
 
 public class UsuarioActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+    private TextView textNomeuser;
+    private BDusuario bDusuario = new BDusuario(this);
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +49,11 @@ public class UsuarioActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+//        textNomeuser = findViewById(R.id.textNomeUser);
+//        Usuario u = new Usuario();
+//        u =bDusuario.selecionarUsuarioEmail(AlergiaFormActivity.usuario1.getEmail());
+//        textNomeuser.setText(String.valueOf(u.getNome()));
     }
 
     @Override
@@ -81,9 +95,11 @@ public class UsuarioActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_camera) {
-            // Handle the camera action
+            Intent intent = new Intent(this, AlergiaFormActivity.class);
+            startActivity(intent);
         } else if (id == R.id.nav_gallery) {
-
+            Intent intent = new Intent(this, ListaAlergiaActivity.class);
+            startActivity(intent);
         } else if (id == R.id.nav_slideshow) {
 
         } else if (id == R.id.nav_manage) {

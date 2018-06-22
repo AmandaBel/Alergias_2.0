@@ -41,4 +41,16 @@
         android:background="@drawable/button"
         android:textColor="@color/colorLigh"
         android:text="Salvar"/>
+    <Button
+        android:id="@+id/btn_voltar_alergiaForm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button2"
+        android:layout_marginTop="50dp"
+        android:onClick="voltar"
+        android:textColor="@color/colorLigh"
+        android:layout_marginRight="120dp"
+        android:text="Voltar"/>
+
+
 </LinearLayout>

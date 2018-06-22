@@ -61,6 +61,29 @@ public class BDalergia {
         }
         return (listAlergia);
     }
+
+    public List<Alergia> buscarAlergiaID(int id){
+        List<Alergia> listAlergia = new ArrayList<Alergia>();
+        String[] colunas = new String[]{"_id", "alergia", "descricao", "usuario"};
+        database = bdaux.getWritableDatabase();
+        Cursor cursor = database.rawQuery("select * from Alergias where usuario = " + id, null);
+
+        if (cursor.getCount() > 0) {
+            cursor.moveToFirst();
+            do {
+                Alergia alergia = new Alergia();
+
+                alergia.setId(cursor.getInt(0));
+                alergia.setAlergia(cursor.getString(1));
+                alergia.setDescricao(cursor.getString(2));
+                Usuario usuario = new Usuario();
+                usuario.setId(cursor.getInt(3));
+                alergia.setUsuario(usuario);
+                listAlergia.add(alergia);
+            } while (cursor.moveToNext());
+        }
+        return (listAlergia);
+    }
 }
 
 
